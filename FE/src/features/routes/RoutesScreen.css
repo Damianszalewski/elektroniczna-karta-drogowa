@@ -1,0 +1,105 @@
+/* Moduł tras */
+
+.route-preset {
+    padding: 14px 16px 2px;
+    margin-bottom: 18px;
+    border: 1px solid #3c6251;
+    border-radius: 8px;
+    background: rgba(55, 112, 86, 0.12);
+}
+
+.route-preset .field {
+    margin-bottom: 7px;
+}
+
+.route-preset > small {
+    color: #8eb5a2;
+    font-size: 11px;
+}
+
+.route-description {
+    width: 100%;
+    resize: vertical;
+    color: #f2f5f4;
+    background: #121517;
+    border: 1px solid #3d474c;
+    border-radius: 7px;
+    padding: 12px 13px;
+    outline: none;
+    min-height: 100px;
+}
+
+.route-description:focus {
+    border-color: var(--mint);
+    box-shadow: 0 0 0 3px rgba(105, 198, 157, 0.12);
+}
+
+.route-list {
+    display: grid;
+    gap: 10px;
+    margin-top: 17px;
+}
+
+.route-card {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr) 72px;
+    align-items: center;
+    gap: 14px;
+    padding: 17px;
+    background: #20272c;
+    border: 1px solid #394249;
+    border-radius: 9px;
+}
+
+.route-card:hover {
+    border-color: #5a806e;
+}
+
+.route-card-icon {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    color: var(--mint);
+    background: rgba(105, 198, 157, 0.12);
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.route-card b {
+    display: block;
+    font: 600 14px 'Space Grotesk';
+    text-transform: uppercase;
+}
+
+.route-card p {
+    margin: 6px 0 0;
+    color: #9aa5a8;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+.route-card .row-actions {
+    justify-content: flex-end;
+}
+
+:root[data-theme='light'] .route-preset {
+    background: #edf7f1;
+    border-color: #a5cbb7;
+}
+
+:root[data-theme='light'] .route-card {
+    background: #ffffff;
+    border-color: #c8d4d0;
+}
+
+:root[data-theme='light'] .route-card:hover {
+    background: #f1f8f4;
+    border-color: #77ad94;
+}
+
+:root[data-theme='light'] .route-card p,
+:root[data-theme='light'] .route-preset > small {
+    color: #6c7d75;
+}
+

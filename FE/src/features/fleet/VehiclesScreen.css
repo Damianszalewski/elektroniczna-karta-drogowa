@@ -1,0 +1,131 @@
+/* Moduł pojazdów */
+
+.vehicle-list {
+    display: grid;
+    gap: 10px;
+}
+
+.vehicle-option {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 42px 1fr 26px;
+    align-items: center;
+    text-align: left;
+    background: #161a1d;
+    border: 1px solid #353e43;
+    color: #f0f4f2;
+    padding: 14px;
+    border-radius: 8px;
+}
+
+.vehicle-option:hover,
+.vehicle-option.selected {
+    border-color: var(--mint);
+    background: #1d3029;
+}
+
+.vehicle-icon {
+    color: var(--mint);
+    font-size: 24px;
+}
+
+.vehicle-option b {
+    display: block;
+    font-size: 14px;
+}
+
+.vehicle-option small {
+    display: block;
+    color: #929d9f;
+    margin-top: 4px;
+}
+
+.vehicles-layout {
+    display: grid;
+    grid-template-columns: 340px minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.vehicle-form {
+    padding: 25px;
+}
+
+.vehicle-form .field-grid {
+    gap: 0 12px;
+}
+
+.vehicle-form-actions {
+    grid-column: auto;
+    margin-top: 6px;
+}
+
+.vehicles-list {
+    min-width: 0;
+}
+
+.vehicle-table {
+    border: 1px solid #364046;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.vehicle-table-row.retired {
+    opacity: 0.7;
+    background: rgba(126, 139, 142, 0.08);
+}
+
+.vehicle-table-row.retired .vehicle-table-icon {
+    color: #9aa5a7;
+    background: rgba(154, 165, 167, 0.14);
+}
+
+.vehicle-table-row .icon-button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.vehicle-table-icon {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    color: var(--mint);
+    background: rgba(105, 198, 157, 0.12);
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.vehicle-form .form-actions {
+    justify-content: space-between;
+}
+
+:root[data-theme='light'] .vehicle-option,
+:root[data-theme='light'] .vehicle-table {
+    background: #ffffff;
+    border-color: #c8d4d0;
+}
+
+:root[data-theme='light'] .vehicle-table-row {
+    color: #1c2925;
+    background: #ffffff;
+    border-color: #d5dfdb;
+}
+
+:root[data-theme='light'] .vehicle-table-row:hover {
+    background: #f1f8f4;
+}
+
+:root[data-theme='light'] .vehicle-table-row b {
+    color: #1c2925;
+}
+
+:root[data-theme='light'] .vehicle-table-row .icon-button {
+    color: #527168;
+}
+
+:root[data-theme='light'] .vehicle-table-row small,
+:root[data-theme='light'] .vehicle-option small {
+    color: #708078;
+}
+

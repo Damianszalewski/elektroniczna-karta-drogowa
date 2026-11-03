@@ -1,0 +1,1617 @@
+/* Widok wydruku karty drogowej */
+
+.print-view {
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+.print-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+    margin-bottom: 28px;
+}
+
+.print-toolbar h1 {
+    font: 600 35px/1.12 'Space Grotesk';
+    letter-spacing: -0.04em;
+    margin: 8px 0 10px;
+    text-transform: uppercase;
+}
+
+.print-toolbar p {
+    margin: 0;
+}
+
+.print-toolbar-actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.print-document {
+    display: grid;
+    gap: 26px;
+}
+
+.print-sheet {
+    width: 100%;
+    min-height: 1020px;
+    padding: 30px;
+    color: #18201d;
+    background: #fff;
+    border: 1px solid #c5cec9;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+    font-family: Arial, sans-serif;
+}
+
+.print-header {
+    display: grid;
+    grid-template-columns: 58px 1fr auto;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #3d9b75;
+}
+
+.print-header.compact {
+    margin-bottom: 30px;
+}
+
+.print-form-code {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 59px;
+    color: #fff;
+    background: #3d9b75;
+    font-size: 12px;
+    line-height: 1.05;
+}
+
+.print-form-code strong {
+    font-size: 19px;
+}
+
+.print-kicker {
+    color: #3d9b75;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+}
+
+.print-header h2 {
+    margin: 4px 0;
+    color: #1b3329;
+    font: 700 25px 'Space Grotesk';
+    letter-spacing: -0.03em;
+}
+
+.print-header p {
+    margin: 0;
+    color: #68736e;
+    font-size: 11px;
+}
+
+.print-number {
+    display: grid;
+    gap: 4px;
+    min-width: 115px;
+    padding: 9px 12px;
+    border: 1px solid #a7b6ad;
+    color: #3d9b75;
+    text-align: right;
+}
+
+.print-number span,
+.print-meta-grid span,
+.print-summary-grid span,
+.print-odometer span {
+    display: block;
+    color: #65726b;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.print-number b {
+    font-size: 17px;
+}
+
+.print-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 17px 0 20px;
+    border: 1px solid #b7c3bc;
+}
+
+.print-meta-grid > div {
+    min-height: 50px;
+    padding: 9px 11px;
+    border-right: 1px solid #d4ddd7;
+    border-bottom: 1px solid #d4ddd7;
+}
+
+.print-meta-grid > div:nth-child(3n) {
+    border-right: 0;
+}
+
+.print-meta-grid > div:nth-last-child(-n + 3) {
+    border-bottom: 0;
+}
+
+.print-meta-grid b,
+.print-summary-grid b,
+.print-odometer b {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.print-section {
+    margin-top: 18px;
+}
+
+.print-section h3,
+.print-route-notes h3 {
+    margin: 0 0 9px;
+    padding: 7px 10px;
+    color: #fff;
+    background: #3d9b75;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+}
+
+.print-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid #b7c3bc;
+}
+
+.print-summary-grid > div {
+    min-height: 57px;
+    padding: 10px;
+    border-right: 1px solid #d4ddd7;
+    border-bottom: 1px solid #d4ddd7;
+}
+
+.print-summary-grid > div:nth-child(2n) {
+    border-right: 0;
+}
+
+.print-summary-grid > div:nth-last-child(-n + 2) {
+    border-bottom: 0;
+}
+
+.print-odometer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid #b7c3bc;
+}
+
+.print-odometer > div {
+    padding: 13px;
+    border-right: 1px solid #d4ddd7;
+}
+
+.print-odometer > div:last-child {
+    border-right: 0;
+}
+
+.print-odometer b {
+    font-size: 18px;
+}
+
+.print-check-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 12px;
+    color: #45534b;
+    font-size: 10px;
+}
+
+.print-lines {
+    display: grid;
+    gap: 15px;
+    padding: 12px 10px;
+    border: 1px solid #b7c3bc;
+}
+
+.print-lines span {
+    display: block;
+    border-bottom: 1px solid #c8d1cb;
+}
+
+.print-signatures {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-top: 35px;
+}
+
+.print-signatures > div {
+    min-height: 42px;
+    border-bottom: 1px solid #516058;
+}
+
+.print-signatures span {
+    display: block;
+    margin-top: 47px;
+    color: #65726b;
+    font-size: 9px;
+    text-align: center;
+}
+
+.print-footer {
+    margin-top: 24px;
+    padding-top: 8px;
+    border-top: 1px solid #b7c3bc;
+    color: #758078;
+    font-size: 8px;
+    text-align: right;
+}
+
+.print-trips-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9px;
+}
+
+.print-trips-table th {
+    padding: 8px 5px;
+    color: #fff;
+    background: #3d9b75;
+    font-size: 8px;
+    text-align: left;
+}
+
+.print-trips-table td {
+    height: 67px;
+    padding: 7px 5px;
+    border: 1px solid #b7c3bc;
+    vertical-align: top;
+}
+
+.print-trips-table th:nth-child(1),
+.print-trips-table td:nth-child(1) {
+    width: 28px;
+    text-align: center;
+}
+
+.print-trips-table th:nth-child(5),
+.print-trips-table td:nth-child(5) {
+    width: 82px;
+}
+
+.print-trips-table th:nth-child(6),
+.print-trips-table td:nth-child(6) {
+    width: 65px;
+}
+
+.print-trips-table th:nth-child(7),
+.print-trips-table td:nth-child(7) {
+    width: 40px;
+    text-align: center;
+}
+
+.print-route-notes {
+    margin-top: 38px;
+}
+
+.print-second-page {
+    page-break-before: always;
+}
+
+.print-action {
+    color: #8ed0b0;
+    font-size: 19px;
+}
+
+.print-action svg {
+    display: block;
+    width: 19px;
+    height: 19px;
+}
+
+.official-document {
+    display: grid;
+    gap: 26px;
+}
+
+.official-sheet {
+    padding: 8px;
+    color: #1d2d39;
+    background: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+}
+
+.official-top {
+    display: grid;
+    grid-template-columns: 31% 25% 44%;
+    min-height: 130px;
+    border: 1px solid #17202a;
+}
+
+.official-seal {
+    position: relative;
+    border-right: 1px solid #17202a;
+}
+
+.official-seal span {
+    position: absolute;
+    right: 7px;
+    bottom: 5px;
+    font-size: 8px;
+}
+
+.official-card-title {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px 14px;
+    border-right: 1px solid #17202a;
+}
+
+.official-card-title h2 {
+    margin: 0 0 17px;
+    color: #213b51;
+    font:
+        700 16px Arial,
+        sans-serif;
+    text-align: center;
+}
+
+.official-card-title label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.official-card-title b {
+    display: inline-block;
+    min-width: 100px;
+    padding: 5px 7px;
+    border: 1px solid #17202a;
+    font-weight: 400;
+}
+
+.official-vehicle-data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+.official-vehicle-data > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 30px;
+    padding: 4px 7px;
+    border-bottom: 1px solid #17202a;
+}
+
+.official-vehicle-data > div:nth-child(1),
+.official-vehicle-data > div:nth-child(5) {
+    grid-column: span 2;
+}
+
+.official-vehicle-data > div:nth-child(odd) {
+    border-right: 1px solid #17202a;
+}
+
+.official-vehicle-data b {
+    min-width: 55px;
+    min-height: 21px;
+    padding: 3px 5px;
+    border: 1px solid #17202a;
+    font-weight: 400;
+}
+
+.official-driver-row {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 0.85fr 0.85fr;
+    border: 1px solid #17202a;
+    border-top: 0;
+}
+
+.official-driver-row > div {
+    min-height: 78px;
+    padding: 8px;
+    border-right: 1px solid #17202a;
+}
+
+.official-driver-row > div:last-child {
+    border-right: 0;
+}
+
+.official-driver-row span {
+    display: block;
+    margin-bottom: 30px;
+    font-size: 12px;
+}
+
+.official-driver-row b {
+    display: block;
+    min-height: 23px;
+    border: 1px solid #17202a;
+    padding: 4px;
+    font-weight: 400;
+}
+
+.official-control-layout {
+    display: grid;
+    grid-template-columns: 1fr 23%;
+}
+
+.official-wide-box,
+.official-control-box {
+    border: 1px solid #17202a;
+    min-height: 57px;
+    padding: 8px;
+}
+
+.official-wide-box > span {
+    display: inline-block;
+    font-size: 12px;
+}
+
+.official-wide-box > b {
+    display: inline-block;
+    margin-left: 28px;
+    min-width: 180px;
+    padding: 5px;
+    border: 1px solid #b4bec5;
+    font-weight: 400;
+}
+
+.official-wide-box small {
+    display: block;
+    margin: 6px 0 0 235px;
+    font-size: 8px;
+}
+
+.official-orders {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    min-height: 68px;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.official-orders b {
+    display: inline-block;
+    min-width: 160px;
+    padding: 5px;
+    border: 1px solid #17202a;
+    font-weight: 400;
+}
+
+.official-orders small {
+    display: block;
+    margin: 4px 0 0 105px;
+}
+
+.official-control-box {
+    grid-row: span 2;
+    min-height: 130px;
+    padding: 9px;
+    font-size: 13px;
+}
+
+.official-control-box div {
+    height: 25px;
+    margin-top: 12px;
+    border-bottom: 1px solid #afb9bf;
+}
+
+.official-trip-summary {
+    display: grid;
+    grid-template-columns: 1fr 23%;
+    margin-top: 5px;
+}
+
+.official-trip-summary table,
+.official-fuel-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.official-trip-summary th,
+.official-trip-summary td,
+.official-fuel-table th,
+.official-fuel-table td {
+    padding: 7px 6px;
+    border: 1px solid #17202a;
+    text-align: left;
+    font-weight: 400;
+}
+
+.official-trip-summary thead th {
+    color: #1d2d39;
+    background: #fff;
+    font-size: 12px;
+    text-align: center;
+}
+
+.official-trip-summary tbody th {
+    width: 17%;
+    font-size: 12px;
+}
+
+.official-trip-summary td {
+    height: 47px;
+    font-size: 10px;
+}
+
+.official-result-sign {
+    border: 1px solid #17202a;
+    padding: 9px;
+    font-size: 12px;
+}
+
+.official-result-sign span {
+    display: block;
+    margin-top: 36px;
+    border-bottom: 1px solid #17202a;
+}
+
+.official-fuel-row {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    margin-top: 5px;
+}
+
+.official-fuel-table,
+.official-consumption {
+    border: 1px solid #17202a;
+}
+
+.official-fuel-table h3,
+.official-consumption h3 {
+    margin: 0;
+    padding: 6px;
+    border-bottom: 1px solid #17202a;
+    color: #1d2d39;
+    background: #fff;
+    font-size: 12px;
+    text-align: center;
+}
+
+.official-fuel-table table {
+    height: 105px;
+}
+
+.official-fuel-table th {
+    text-align: center;
+    font-size: 9px;
+}
+
+.official-fuel-table td {
+    height: 46px;
+    text-align: center;
+}
+
+.official-empty-cell {
+    text-align: left !important;
+}
+
+.official-consumption > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 145px;
+}
+
+.official-consumption b,
+.official-consumption span {
+    padding: 7px;
+    border-right: 1px solid #17202a;
+    text-align: center;
+}
+
+.official-consumption span {
+    font-size: 8px;
+}
+
+.official-bottom-signatures {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.official-bottom-signatures > div {
+    min-height: 66px;
+    padding: 9px;
+    border: 1px solid #17202a;
+    font-size: 12px;
+}
+
+.official-bottom-signatures b {
+    font-weight: 400;
+}
+
+.official-footnote {
+    margin-top: 8px;
+    color: #56656e;
+    font-size: 8px;
+    text-align: right;
+}
+
+.official-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 10px 12px;
+    border: 1px solid #17202a;
+    border-bottom: 3px solid #3d9b75;
+}
+
+.official-list-header span {
+    color: #3d9b75;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.official-list-header h2 {
+    margin: 6px 0 0;
+    color: #213b51;
+    font-size: 18px;
+}
+
+.official-list-header > b {
+    min-width: 80px;
+    padding: 7px;
+    border: 1px solid #17202a;
+    text-align: center;
+    font-size: 14px;
+}
+
+.official-list-meta {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 0.7fr;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.official-list-meta span {
+    padding: 8px;
+    border: 1px solid #17202a;
+    font-size: 9px;
+}
+
+.official-list-meta b {
+    display: block;
+    margin-top: 5px;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.official-routes-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 8px;
+}
+
+.official-routes-table th {
+    padding: 6px 3px;
+    border: 1px solid #17202a;
+    background: #fff;
+    font-size: 8px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.official-routes-table td {
+    height: 94px;
+    padding: 5px 3px;
+    border: 1px solid #17202a;
+    vertical-align: top;
+    text-align: center;
+    word-break: break-word;
+}
+
+.official-routes-table td:nth-child(3) {
+    text-align: left;
+}
+
+.official-routes-table th:nth-child(1) {
+    width: 5%;
+}
+
+.official-routes-table th:nth-child(2) {
+    width: 13%;
+}
+
+.official-routes-table th:nth-child(3) {
+    width: 19%;
+}
+
+.official-routes-table th:nth-child(4),
+.official-routes-table th:nth-child(6) {
+    width: 9%;
+}
+
+.official-routes-table th:nth-child(5),
+.official-routes-table th:nth-child(7) {
+    width: 10%;
+}
+
+.official-routes-table th:nth-child(8) {
+    width: 7%;
+}
+
+.official-routes-table th:nth-child(9) {
+    width: 9%;
+}
+
+.official-routes-table th:nth-child(10) {
+    width: 9%;
+}
+
+.official-route-notes {
+    margin-top: 28px;
+}
+
+.official-route-notes h3 {
+    margin: 0;
+    padding: 7px;
+    border: 1px solid #17202a;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.official-route-notes div {
+    height: 22px;
+    border: 1px solid #17202a;
+    border-top: 0;
+}
+
+.official-top > *,
+.official-driver-row > *,
+.official-control-layout > *,
+.official-trip-summary > *,
+.official-fuel-row > *,
+.official-vehicle-data > * {
+    min-width: 0;
+}
+
+.official-vehicle-data > div,
+.official-driver-row span,
+.official-driver-row b,
+.official-card-title,
+.official-orders,
+.official-orders > div {
+    overflow-wrap: anywhere;
+}
+
+.official-trip-summary table,
+.official-fuel-table table {
+    table-layout: fixed;
+}
+
+.official-trip-summary td,
+.official-trip-summary th,
+.official-fuel-table td,
+.official-fuel-table th {
+    overflow-wrap: anywhere;
+}
+
+.official-sheet {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 10mm;
+    }
+    body {
+        min-width: 0;
+        background: #fff;
+    }
+    body * {
+        visibility: hidden !important;
+    }
+    .print-document,
+    .print-document * {
+        visibility: visible !important;
+    }
+    .print-view {
+        position: absolute;
+        inset: 0;
+        max-width: none;
+        margin: 0;
+    }
+    .print-toolbar {
+        display: none;
+    }
+    .print-document {
+        display: block;
+        width: 100%;
+    }
+    .print-sheet {
+        width: 190mm;
+        min-height: 277mm;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+    }
+    .print-sheet:not(:last-child) {
+        page-break-after: always;
+    }
+    .print-header {
+        padding-top: 0;
+    }
+    .print-second-page {
+        page-break-before: auto;
+    }
+    .official-document {
+        width: 100%;
+    }
+    .official-sheet {
+        width: 100%;
+        min-height: 277mm;
+        padding: 8px;
+        border: 0;
+        box-shadow: none;
+        zoom: 1;
+    }
+    .official-sheet:not(:last-child) {
+        page-break-after: always;
+    }
+    .official-second-page {
+        min-height: 277mm;
+    }
+}
+
+.source-document {
+    display: grid;
+    gap: 26px;
+}
+
+.source-card {
+    width: 100%;
+    color: #1d2d39;
+    background: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.05;
+}
+
+.source-card,
+.source-card * {
+    box-sizing: border-box;
+}
+
+.source-top {
+    display: grid;
+    grid-template-columns: 30% 25% 45%;
+    height: 180px;
+    border: 1px solid #111;
+}
+
+.source-top > * {
+    min-width: 0;
+}
+
+.source-seal {
+    position: relative;
+    border-right: 1px solid #111;
+}
+
+.source-seal span {
+    position: absolute;
+    right: 6px;
+    bottom: 5px;
+    font-size: 8px;
+}
+
+.source-card-id {
+    padding: 9px 14px;
+    border-right: 1px solid #111;
+}
+
+.source-card-id h2 {
+    margin: 0 0 30px;
+    color: #1b3b57;
+    font:
+        700 20px Arial,
+        sans-serif;
+    text-align: center;
+}
+
+.source-card-id div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.source-card-id b {
+    min-width: 110px;
+    min-height: 27px;
+    padding: 5px;
+    border: 1px solid #111;
+    font-weight: 400;
+    text-align: center;
+}
+
+.source-car {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.source-car > div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    min-height: 33px;
+    padding: 4px 7px;
+    border-bottom: 1px solid #111;
+}
+
+.source-car > div:nth-child(1),
+.source-car > div:nth-child(5) {
+    grid-column: span 2;
+}
+
+.source-car > div:nth-child(odd) {
+    border-right: 1px solid #111;
+}
+
+.source-car span {
+    font-size: 11px;
+}
+
+.source-car b {
+    min-width: 42px;
+    min-height: 23px;
+    padding: 4px 6px;
+    border: 1px solid #111;
+    font-weight: 400;
+}
+
+.source-main {
+    display: grid;
+    grid-template-columns: 78% 22%;
+}
+
+.source-main-left {
+    min-width: 0;
+    padding-right: 5px;
+}
+
+.source-main-right {
+    display: grid;
+    grid-template-rows: 250px 100px 106px;
+    gap: 5px;
+    min-width: 0;
+    padding-left: 0;
+}
+
+.source-work-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1.35fr 0.75fr 0.55fr;
+    height: 100px;
+    border: 1px solid #111;
+}
+
+.source-work-row > div {
+    min-width: 0;
+    padding: 9px;
+    border-right: 1px solid #111;
+    text-align: center;
+}
+
+.source-work-row > div:last-child {
+    border-right: 0;
+}
+
+.source-work-row span {
+    display: block;
+    min-height: 26px;
+    font-size: 12px;
+}
+
+.source-work-row b {
+    display: block;
+    min-height: 27px;
+    margin-top: 20px;
+    padding: 5px;
+    border: 1px solid #111;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.source-hours > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    font-size: 9px;
+}
+
+.source-hours > b {
+    display: inline-block;
+    width: 47%;
+    margin-top: 3px;
+    font-size: 10px;
+}
+
+.source-radius {
+    grid-column: 4;
+}
+
+.source-check,
+.source-orders {
+    margin-top: 5px;
+    border: 1px solid #111;
+}
+
+.source-check {
+    min-height: 60px;
+    padding: 8px;
+}
+
+.source-check span {
+    display: inline-block;
+    font-size: 12px;
+}
+
+.source-check b {
+    display: inline-block;
+    min-width: 160px;
+    margin-left: 25px;
+    padding: 5px;
+    border: 1px solid #b0bcc3;
+    font-weight: 400;
+}
+
+.source-check small {
+    display: block;
+    margin: 5px 0 0 230px;
+    font-size: 8px;
+}
+
+.source-orders {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 65px;
+}
+
+.source-orders > div {
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+.source-orders > div + div {
+    border-left: 1px solid #111;
+}
+
+.source-orders b {
+    display: inline-block;
+    min-width: 140px;
+    margin-left: 5px;
+    padding: 5px;
+    border: 1px solid #111;
+    font-weight: 400;
+}
+
+.source-orders small {
+    display: block;
+    margin: 4px 0 0 95px;
+    font-size: 8px;
+}
+
+.source-trip-table {
+    width: 100%;
+    height: 211px;
+    margin-top: 5px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.source-trip-table th,
+.source-trip-table td {
+    border: 1px solid #111;
+    padding: 6px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.source-trip-table thead th {
+    height: 32px;
+    font-size: 12px;
+}
+
+.source-trip-table tbody th {
+    width: 17%;
+    text-align: left;
+    font-size: 12px;
+}
+
+.source-trip-table tbody td {
+    height: 55px;
+    font-size: 10px;
+    word-break: break-word;
+}
+
+.source-control,
+.source-issued,
+.source-standard {
+    border: 1px solid #111;
+}
+
+.source-control h3,
+.source-issued h3,
+.source-standard h3 {
+    margin: 9px 7px;
+    font-size: 13px;
+}
+
+.source-control span {
+    display: block;
+    height: 35px;
+    margin: 10px;
+    border-bottom: 1px solid #b3bec5;
+}
+
+.source-issued span {
+    display: block;
+    height: 53px;
+    margin: 10px;
+    border-bottom: 1px solid #111;
+}
+
+.source-standard {
+    text-align: center;
+}
+
+.source-standard h3 {
+    line-height: 1.2;
+}
+
+.source-fuel {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    height: 275px;
+    margin-top: 5px;
+}
+
+.source-fuel-main,
+.source-fuel-consumption {
+    border: 1px solid #111;
+    min-width: 0;
+}
+
+.source-fuel h3,
+.source-fuel-consumption h3 {
+    margin: 0;
+    padding: 7px;
+    border-bottom: 1px solid #111;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.source-fuel-head,
+.source-fuel-values {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr 0.55fr 0.55fr 1.45fr 1fr;
+}
+
+.source-fuel-head span,
+.source-fuel-values span {
+    min-width: 0;
+    min-height: 58px;
+    padding: 6px 3px;
+    border-right: 1px solid #111;
+    border-bottom: 1px solid #111;
+    text-align: center;
+    font-size: 8px;
+    overflow-wrap: anywhere;
+}
+
+.source-fuel-values span {
+    min-height: 65px;
+    padding-top: 25px;
+}
+
+.source-fuel-sign {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+    font-size: 9px;
+}
+
+.source-consumption-labels {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 75px;
+}
+
+.source-consumption-labels span {
+    padding: 7px 3px;
+    border-right: 1px solid #111;
+    border-bottom: 1px solid #111;
+    text-align: center;
+    font-size: 10px;
+}
+
+.source-consumption-labels small {
+    font-size: 7px;
+}
+
+.source-consumption-empty {
+    min-height: 142px;
+    border-right: 1px solid #111;
+}
+
+.source-signatures {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.78fr;
+    gap: 14px;
+    margin-top: 5px;
+}
+
+.source-signatures div {
+    height: 75px;
+    padding: 9px;
+    border: 1px solid #111;
+    font-size: 13px;
+}
+
+.source-footnote {
+    margin: 8px 0 0;
+    color: #56656e;
+    font-size: 8px;
+    text-align: right;
+}
+
+.source-second-page {
+    page-break-before: always;
+}
+
+.source-routes-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 12px;
+    border: 1px solid #111;
+    border-bottom: 3px solid #3d9b75;
+}
+
+.source-routes-title span {
+    color: #3d9b75;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.source-routes-title h2 {
+    margin: 5px 0 0;
+    color: #1b3b57;
+    font-size: 18px;
+}
+
+.source-routes-title b {
+    padding: 7px 12px;
+    border: 1px solid #111;
+    font-size: 14px;
+}
+
+.source-routes-meta {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 0.7fr;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.source-routes-meta span {
+    padding: 8px;
+    border: 1px solid #111;
+    font-size: 9px;
+}
+
+.source-routes-meta b {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.source-routes-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 8px;
+}
+
+.source-routes-table th,
+.source-routes-table td {
+    border: 1px solid #111;
+    padding: 5px 3px;
+    overflow-wrap: anywhere;
+    text-align: center;
+}
+
+.source-routes-table th {
+    height: 45px;
+    font-weight: 400;
+    vertical-align: middle;
+}
+
+.source-routes-table td {
+    height: 90px;
+    vertical-align: top;
+}
+
+.source-routes-table th:nth-child(1) {
+    width: 5%;
+}
+
+.source-routes-table th:nth-child(2) {
+    width: 13%;
+}
+
+.source-routes-table th:nth-child(3) {
+    width: 19%;
+}
+
+.source-routes-table th:nth-child(4),
+.source-routes-table th:nth-child(6) {
+    width: 9%;
+}
+
+.source-routes-table th:nth-child(5),
+.source-routes-table th:nth-child(7) {
+    width: 10%;
+}
+
+.source-routes-table th:nth-child(8) {
+    width: 7%;
+}
+
+.source-routes-table th:nth-child(9),
+.source-routes-table th:nth-child(10) {
+    width: 9%;
+}
+
+.source-route-notes {
+    margin-top: 22px;
+}
+
+.source-route-notes h3 {
+    margin: 0;
+    padding: 7px;
+    border: 1px solid #111;
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.source-route-notes span {
+    display: block;
+    height: 24px;
+    border: 1px solid #111;
+    border-top: 0;
+}
+
+@media print {
+    .source-card {
+        width: 100%;
+        max-width: 190mm;
+        overflow: hidden;
+        font-size: 2.45mm;
+    }
+    .source-document {
+        width: 100%;
+        gap: 0;
+    }
+    .source-top {
+        height: 29mm;
+    }
+    .source-card-id h2 {
+        margin-bottom: 5mm;
+        font-size: 4mm;
+    }
+    .source-card-id div {
+        font-size: 3.3mm;
+    }
+    .source-card-id b {
+        min-width: 18mm;
+        min-height: 5mm;
+        padding: 1mm;
+    }
+    .source-seal span {
+        font-size: 1.7mm;
+    }
+    .source-car > div {
+        min-height: 5.3mm;
+        padding: 0.7mm 1.2mm;
+    }
+    .source-car span {
+        font-size: 2.4mm;
+    }
+    .source-car b {
+        min-height: 3.6mm;
+        padding: 0.5mm 1mm;
+    }
+    .source-work-row {
+        height: 16mm;
+    }
+    .source-work-row > div {
+        padding: 1.5mm;
+    }
+    .source-work-row span {
+        min-height: 4.5mm;
+        font-size: 2.5mm;
+    }
+    .source-work-row b {
+        min-height: 4mm;
+        margin-top: 3mm;
+        padding: 0.8mm;
+    }
+    .source-hours > div {
+        font-size: 1.9mm;
+    }
+    .source-check {
+        min-height: 10mm;
+        padding: 1.4mm;
+    }
+    .source-check span,
+    .source-orders {
+        font-size: 2.5mm;
+    }
+    .source-check b {
+        min-width: 30mm;
+        margin-left: 5mm;
+        padding: 0.8mm;
+    }
+    .source-check small,
+    .source-orders small {
+        font-size: 1.7mm;
+    }
+    .source-orders {
+        min-height: 11mm;
+    }
+    .source-orders > div {
+        padding: 1.4mm 2mm;
+    }
+    .source-orders b {
+        min-width: 28mm;
+        padding: 0.8mm;
+    }
+    .source-trip-table {
+        height: 35mm;
+    }
+    .source-trip-table thead th {
+        height: 5mm;
+        font-size: 2.6mm;
+    }
+    .source-trip-table tbody td {
+        height: 9mm;
+        font-size: 2.1mm;
+    }
+    .source-trip-table tbody th {
+        font-size: 2.5mm;
+    }
+    .source-main-right {
+        grid-template-rows: 40mm 16mm 17mm;
+        gap: 0.8mm;
+    }
+    .source-control h3,
+    .source-issued h3,
+    .source-standard h3 {
+        margin: 1.8mm 1.4mm;
+        font-size: 2.7mm;
+    }
+    .source-control span {
+        height: 5.5mm;
+        margin: 1.8mm;
+    }
+    .source-issued span {
+        height: 9mm;
+        margin: 1.8mm;
+    }
+    .source-fuel {
+        height: 44mm;
+    }
+    .source-fuel h3,
+    .source-fuel-consumption h3 {
+        padding: 1.2mm;
+        font-size: 2.7mm;
+    }
+    .source-fuel-head span,
+    .source-fuel-values span {
+        min-height: 9mm;
+        padding: 1mm 0.5mm;
+        font-size: 1.7mm;
+    }
+    .source-fuel-values span {
+        min-height: 10mm;
+        padding-top: 4mm;
+    }
+    .source-fuel-sign {
+        padding: 2.5mm 1.8mm;
+        font-size: 1.8mm;
+    }
+    .source-consumption-labels {
+        min-height: 12mm;
+    }
+    .source-consumption-labels span {
+        padding: 1.2mm 0.5mm;
+        font-size: 2mm;
+    }
+    .source-consumption-labels small {
+        font-size: 1.4mm;
+    }
+    .source-consumption-empty {
+        min-height: 22mm;
+    }
+    .source-signatures {
+        gap: 2.4mm;
+    }
+    .source-signatures div {
+        height: 13mm;
+        padding: 1.5mm;
+        font-size: 2.7mm;
+    }
+    .source-footnote {
+        font-size: 1.6mm;
+    }
+    .source-routes-title {
+        padding: 2mm;
+    }
+    .source-routes-title span {
+        font-size: 1.9mm;
+    }
+    .source-routes-title h2 {
+        font-size: 3.6mm;
+    }
+    .source-routes-title b {
+        padding: 1.2mm 2mm;
+        font-size: 2.8mm;
+    }
+    .source-routes-meta {
+        gap: 1.5mm;
+        margin: 2.6mm 0;
+    }
+    .source-routes-meta span {
+        padding: 1.3mm;
+        font-size: 1.8mm;
+    }
+    .source-routes-meta b {
+        font-size: 2.3mm;
+    }
+    .source-routes-table {
+        font-size: 1.8mm;
+    }
+    .source-routes-table th {
+        height: 8mm;
+    }
+    .source-routes-table td {
+        height: 16mm;
+    }
+    .source-route-notes {
+        margin-top: 4mm;
+    }
+    .source-route-notes h3 {
+        padding: 1.2mm;
+        font-size: 2.2mm;
+    }
+    .source-route-notes span {
+        height: 4mm;
+    }
+}
+

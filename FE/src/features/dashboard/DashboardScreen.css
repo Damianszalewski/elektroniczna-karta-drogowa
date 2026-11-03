@@ -1,0 +1,119 @@
+/* Moduł dashboardu */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.action-card {
+    min-height: 190px;
+    padding: 23px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 23px;
+    color: #f4f7f6;
+    background: #20272c;
+    border: 1px solid #394249;
+    border-radius: 12px;
+    transition:
+        transform 0.18s,
+        border 0.18s,
+        background 0.18s;
+}
+
+.action-card:hover {
+    transform: translateY(-3px);
+    border-color: #6a8f7e;
+    background: #252f33;
+}
+
+.action-card.accent {
+    background: linear-gradient(145deg, #204638, #1a302a);
+    border-color: #397c60;
+}
+
+.action-icon {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    color: var(--mint);
+}
+
+.action-icon svg {
+    width: 25px;
+    height: 25px;
+}
+
+.action-card b {
+    display: block;
+    font: 600 17px 'Space Grotesk';
+    text-transform: uppercase;
+}
+
+.action-card small {
+    display: block;
+    color: #9aa5a8;
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+.action-card i {
+    margin-top: auto;
+    color: var(--mint);
+    font-size: 20px;
+    font-style: normal;
+}
+
+.info-banner {
+    margin-top: 36px;
+    padding: 21px 24px;
+    border: 1px solid #364144;
+    border-radius: 10px;
+    background: rgba(27, 34, 38, 0.78);
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.info-banner b {
+    font-size: 13px;
+}
+
+.info-banner p {
+    margin: 6px 0 0;
+    color: #899599;
+    font-size: 13px;
+}
+
+:root[data-theme='light'] .action-card {
+    color: #1c2925;
+    background: #ffffff;
+    border-color: #c8d4d0;
+    box-shadow: 0 10px 28px rgba(51, 78, 67, 0.06);
+}
+
+:root[data-theme='light'] .action-card:hover {
+    border-color: #77ad94;
+    background: #f7fbf9;
+}
+
+:root[data-theme='light'] .action-card.accent {
+    color: #173e2f;
+    background: linear-gradient(145deg, #dcefe6, #cfe8dc);
+    border-color: #8fc4aa;
+}
+
+:root[data-theme='light'] .action-card small,
+:root[data-theme='light'] .info-banner p {
+    color: #687a72;
+}
+
+:root[data-theme='light'] .info-banner {
+    background: #ffffff;
+    border-color: #c8d4d0;
+}
+

@@ -1,0 +1,17 @@
+**/__pycache__/
+*.py[cod]
+*.db
+.env
+.env.*
+!.env.example
+!.env.docker.example
+!.env.production.example
+FE/node_modules/
+FE/dist/
+FE/*.tsbuildinfo
+.venv/
+venv/
+
+# Lokalny zrzut referencyjny i robocza notatka — nie publikować.
+/37ddf229-72d9-4a37-91e3-fdcd5d79fbf8.png
+/Kolekcja User.txt
