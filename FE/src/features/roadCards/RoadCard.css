@@ -1,0 +1,271 @@
+/* Moduł tworzenia kart drogowych i kursów */
+
+.steps {
+    display: flex;
+    max-width: 600px;
+    border-bottom: 1px solid #30383d;
+    margin-bottom: 36px;
+    gap: 4px;
+}
+
+.step span {
+    margin-right: 8px;
+}
+
+.form-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 22px;
+}
+
+.card-title {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 29px;
+}
+
+.card-title > span {
+    color: var(--mint);
+    font: 700 18px 'Space Grotesk';
+}
+
+.card-title b {
+    display: block;
+    font: 600 17px 'Space Grotesk';
+    text-transform: uppercase;
+}
+
+.card-title small {
+    color: #8e9a9e;
+    display: block;
+    margin-top: 3px;
+}
+
+.tip-card {
+    padding: 22px;
+    border-color: #456154;
+    background: rgba(36, 66, 54, 0.34);
+}
+
+.tip-card span {
+    color: var(--mint);
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.tip-card p {
+    color: #aab5b5;
+    font-size: 13px;
+    line-height: 1.55;
+    margin-bottom: 0;
+}
+
+.empty-state {
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #9ca7aa;
+    text-align: center;
+    border: 1px dashed #425056;
+    border-radius: 8px;
+    padding: 22px;
+}
+
+.empty-state.large {
+    min-height: 300px;
+    background: rgba(25, 31, 35, 0.65);
+}
+
+.empty-state > div {
+    font-size: 34px;
+    color: #657277;
+    margin-bottom: 12px;
+}
+
+.empty-state b {
+    color: #dce3e1;
+}
+
+.empty-state p {
+    max-width: 350px;
+    line-height: 1.55;
+    font-size: 13px;
+}
+
+.empty-state code {
+    color: var(--mint);
+}
+
+.trips-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.trip-row {
+    display: grid;
+    grid-template-columns: 52px 1fr 30px;
+    align-items: center;
+    gap: 16px;
+    margin-top: 10px;
+    padding: 15px 18px;
+    border: 1px solid #3b454a;
+    border-radius: 9px;
+    background: #222a2f;
+}
+
+.trip-row b {
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.trip-row b span {
+    color: var(--mint);
+}
+
+.trip-row small {
+    display: block;
+    color: #909b9f;
+    margin-top: 6px;
+}
+
+.trip-index {
+    color: var(--mint);
+    font: 700 16px 'Space Grotesk';
+}
+
+.vehicle-option .vehicle-icon {
+    display: grid;
+    place-items: center;
+}
+
+.vehicle-option .vehicle-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.trips-actions {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #30383d;
+    padding-top: 22px;
+}
+
+.editor-card {
+    margin-top: 16px;
+    background: #272f35;
+}
+
+.editor-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 24px;
+}
+
+.editor-title h3 {
+    margin: 7px 0 0;
+    font: 600 18px 'Space Grotesk';
+    text-transform: uppercase;
+}
+
+.field-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 16px;
+}
+
+.field-grid .field:nth-child(1),
+.field-grid .field:nth-child(2) {
+    grid-column: span 2;
+}
+
+.editor-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #3c464b;
+    padding-top: 20px;
+}
+
+.distance {
+    color: #90bea8;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.distance b {
+    color: #d0e99b;
+    font-size: 14px;
+}
+
+.field-hint.error-hint,
+.distance.invalid {
+    color: #ff8f88;
+}
+
+.distance.invalid b {
+    color: #ff8f88;
+}
+
+:root[data-theme='light'] .distance {
+    color: #287b5b;
+}
+
+:root[data-theme='light'] .distance b {
+    color: #355f43;
+    font-weight: 700;
+}
+
+:root[data-theme='light'] .form-card,
+:root[data-theme='light'] .tip-card,
+:root[data-theme='light'] .editor-card {
+    color: #1d2b26;
+    background: #ffffff;
+    border-color: #c8d4d0;
+    box-shadow: 0 10px 26px rgba(51, 78, 67, 0.05);
+}
+
+:root[data-theme='light'] .vehicle-option,
+:root[data-theme='light'] .trip-row {
+    color: #1d2b26;
+    background: #f4f8f6;
+    border-color: #c8d4d0;
+}
+
+:root[data-theme='light'] .vehicle-option:hover,
+:root[data-theme='light'] .vehicle-option.selected {
+    background: #e4f2eb;
+    border-color: #77ad94;
+}
+
+:root[data-theme='light'] .trip-row:hover {
+    background: #eaf4ef;
+}
+
+:root[data-theme='light'] .vehicle-option b {
+    color: #1d2b26;
+}
+
+:root[data-theme='light'] .vehicle-option small {
+    color: #687a72;
+}
+
+:root[data-theme='light'] .vehicle-option .radio {
+    color: #238a62;
+}
+
+:root[data-theme='light'] .empty-state {
+    background: #f8faf9;
+    border-color: #b9cac2;
+}
+
+:root[data-theme='light'] .empty-state p,
+:root[data-theme='light'] .tip-card p {
+    color: #6b7c74;
+}
+

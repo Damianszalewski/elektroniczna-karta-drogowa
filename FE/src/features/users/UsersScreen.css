@@ -1,0 +1,157 @@
+/* Moduł użytkowników */
+
+.users-layout {
+    display: grid;
+    grid-template-columns: 340px minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.user-form {
+    padding: 25px;
+}
+
+.users-list {
+    min-width: 0;
+}
+
+.user-table {
+    border: 1px solid #364046;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.user-avatar {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: var(--mint);
+    background: rgba(105, 198, 157, 0.12);
+    font-weight: 700;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 6px 9px;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.role-kierowca {
+    color: #b9d8ff;
+    background: rgba(89, 145, 207, 0.18);
+}
+
+.role-logistyka {
+    color: #ffe1a3;
+    background: rgba(212, 158, 61, 0.18);
+}
+
+.role-administrator {
+    color: #b9f2d2;
+    background: rgba(105, 198, 157, 0.18);
+}
+
+.admin-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin: 3px 0 21px;
+    padding: 12px;
+    border: 1px solid #394249;
+    border-radius: 8px;
+    background: rgba(105, 198, 157, 0.05);
+    color: #dce5e1;
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.admin-checkbox input {
+    width: 18px;
+    min-height: 18px;
+    margin: 1px 0 0;
+    accent-color: var(--mint);
+}
+
+.admin-checkbox span {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.admin-checkbox b {
+    font-size: 13px;
+}
+
+.admin-checkbox small {
+    color: #899599;
+    font-size: 11px;
+    line-height: 1.35;
+}
+
+:root[data-theme='light'] .user-form,
+:root[data-theme='light'] .user-table {
+    background: #ffffff;
+    border-color: #c8d4d0;
+}
+
+:root[data-theme='light'] .users-list {
+    background: transparent;
+}
+
+:root[data-theme='light'] .user-table-row {
+    color: #1c2925;
+    background: #ffffff;
+    border-color: #d5dfdb;
+}
+
+:root[data-theme='light'] .user-table-row:hover {
+    background: #f1f8f4;
+}
+
+:root[data-theme='light'] .user-table-row b {
+    color: #1c2925;
+}
+
+:root[data-theme='light'] .user-avatar {
+    color: #ffffff;
+    background: #2f8b68;
+    border: 1px solid #267657;
+}
+
+:root[data-theme='light'] .user-table-row .icon-button {
+    color: #527168;
+}
+
+:root[data-theme='light'] .admin-checkbox {
+    background: #f1f8f4;
+    border-color: #b8cdc2;
+    color: #315243;
+}
+
+:root[data-theme='light'] .role-badge {
+    font-size: 11px;
+    letter-spacing: 0.03em;
+}
+
+:root[data-theme='light'] .role-kierowca {
+    color: #245b7b;
+    background: #e3f0f8;
+}
+
+:root[data-theme='light'] .role-logistyka {
+    color: #805812;
+    background: #fff0d0;
+}
+
+:root[data-theme='light'] .role-administrator {
+    color: #176847;
+    background: #d9f1e5;
+}
+
