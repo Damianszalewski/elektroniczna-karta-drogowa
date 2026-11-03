@@ -31,7 +31,7 @@ try {
         $env:APP_PORT = $port
 
         try {
-            Invoke-CheckedCommand docker compose --project-name $projectName --env-file .env.docker.example up -d --build
+            Invoke-CheckedCommand docker compose --project-name $projectName --env-file .env.docker.example up --detach --build
 
             $healthy = $false
             for ($attempt = 1; $attempt -le 30; $attempt++) {
