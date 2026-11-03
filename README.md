@@ -99,6 +99,20 @@ Pełny smoke test buduje obrazy, uruchamia PostgreSQL, backend i frontend, a nas
 pwsh -File .\scripts\ci-local.ps1 -SmokeTest
 ```
 
+## Lokalne uruchomienie kontroli CI
+
+Podstawowe kontrole frontendu, backendu i Compose:
+
+```powershell
+pwsh -File .\scripts\ci-local.ps1
+```
+
+Pełny test ze zbudowaniem i uruchomieniem tymczasowego stosu Docker:
+
+```powershell
+pwsh -File .\scripts\ci-local.ps1 -SmokeTest
+```
+
 ## Struktura projektu
 
 ```text
